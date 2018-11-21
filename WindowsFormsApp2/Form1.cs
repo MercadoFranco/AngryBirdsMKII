@@ -360,7 +360,7 @@ namespace WindowsFormsApp2
 
         private void LabelVidaPajaro_Click(object sender, EventArgs e) //Se pide POR FAVOR que se pueda mostrar el daño del pajaro y no la vida sin la necesidad de hacer un click sobre el numero, ya que yo, Hernández Cerna Guillermo no sé cómo hacerlo.
         {
-            LabelVidaPajaro.Text = IslaPajaro.Instancia().mostrarPajaros().First().fuerza().ToString();
+            
         }
     }
 }

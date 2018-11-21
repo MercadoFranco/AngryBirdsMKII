@@ -41,10 +41,13 @@ namespace WindowsFormsApp2
         }
         public void atacarIslaCerdito()
         {
-            if (pajaros.Count() > 0) //Se agregó un if porque en caso de cagarse a piñas los bichos y que no haya pajaros, se rompe todo.
+            if (pajaros.Count() > 0) //Se fija que haya pajaros para atacar
             {
-                if (IslaCerdito.Instancia().serAtacado(pajaros.First()))
+                if (IslaCerdito.Instancia().TieneObstaculos())
+                {
+                    IslaCerdito.Instancia().serAtacado(pajaros.First());
                     pajaros.Remove(pajaros.First());
+                }
             }
         }
 

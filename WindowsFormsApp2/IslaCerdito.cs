@@ -26,17 +26,22 @@ namespace WindowsFormsApp2
             instancia = this;
         }
 
-        public bool serAtacado(PajaroComun pajaro) //Se modifico el tipo del método ya que se requiere que devuelva un valor para verificar en isla pajaro si hay algun obstaculo a atacar y evitar que el pajaro ataque sin haber algun obstaculo.
+        //Se modifico el tipo del método ya que se requiere que devuelva un valor para verificar en isla pajaro si hay algun obstaculo a atacar y evitar que el pajaro ataque sin haber algun obstaculo.
+        //Se remodifico el metodo para que se vuelva un procedimiento y se agrego un metodo que devuelve si tiene obstaculos
+        public void serAtacado(PajaroComun pajaro)
         {
-            if (obstaculos.Count() > 0) //Se agregó un if porque en caso de cagarse a piñas los bichos y que no haya cerditos, se rompe todo.
+            obstaculos.First().serDañado(pajaro.fuerza());
+            if (obstaculos.First().mostrarResistencia() <= 0)
             {
-                obstaculos.First().serDañado(pajaro.fuerza());
-                if (obstaculos.First().mostrarResistencia() <= 0)
-                    obstaculos.Remove(obstaculos.First());
-                return true;
+                obstaculos.Remove(obstaculos.First());
             }
-            return false;
         }
+
+        public bool TieneObstaculos()
+        {
+                return obstaculos.Count() > 0;
+        }
+
         public List<Obstaculo> mostrarCerditos()
         {
             return obstaculos;
