@@ -13,7 +13,7 @@ namespace WindowsFormsApp2
         public Bomb(int ira, int fMax) : base(ira)
         {
             fuerzaMax = fMax;
-            imagen = Properties.Resources.Chuck;
+            imagen = Properties.Resources.Bomb;
         }
 
         public void cambiarFuerza(int nuevaFuerzaMax)

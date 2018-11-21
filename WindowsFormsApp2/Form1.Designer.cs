@@ -236,6 +236,7 @@
             this.LabelVidaPajaro.Size = new System.Drawing.Size(24, 26);
             this.LabelVidaPajaro.TabIndex = 11;
             this.LabelVidaPajaro.Text = "0";
+            this.LabelVidaPajaro.Click += new System.EventHandler(this.LabelVidaPajaro_Click);
             // 
             // LabelVidaCerdito
             // 

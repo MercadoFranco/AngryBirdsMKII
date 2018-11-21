@@ -41,8 +41,11 @@ namespace WindowsFormsApp2
         }
         public void atacarIslaCerdito()
         {
-            IslaCerdito.Instancia().serAtacado(pajaros);
-            pajaros.Remove(pajaros.First());
+            if (pajaros.Count() > 0) //Se agregó un if porque en caso de cagarse a piñas los bichos y que no haya pajaros, se rompe todo.
+            {
+                if (IslaCerdito.Instancia().serAtacado(pajaros.First()))
+                    pajaros.Remove(pajaros.First());
+            }
         }
 
         public void AgregarBomb(int ira, int tope)

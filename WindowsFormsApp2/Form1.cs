@@ -221,19 +221,70 @@ namespace WindowsFormsApp2
         }
         private void ActualizarImagenes()
         {
-            PictureBoxPajaroActual.BackgroundImage = IslaPajaro.Instancia().mostrarPajaros()[0].Imagen();
-            PictureBoxPajaro1.BackgroundImage = IslaPajaro.Instancia().mostrarPajaros()[1].Imagen();
-            PictureBoxPajaro2.BackgroundImage = IslaPajaro.Instancia().mostrarPajaros()[2].Imagen();
-            PictureBoxPajaro3.BackgroundImage = IslaPajaro.Instancia().mostrarPajaros()[3].Imagen();
-            PictureBoxPajaro4.BackgroundImage = IslaPajaro.Instancia().mostrarPajaros()[4].Imagen();
-            PictureBoxCerditoActual.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[0].Imagen();
-            PictureBoxCerdito1.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[1].Imagen();
-            PictureBoxCerdito2.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[2].Imagen();
-            PictureBoxCerdito3.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[3].Imagen();
-            PictureBoxCerdito4.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[4].Imagen();
-            PictureBoxCerdito5.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[5].Imagen();
-            //¿Y si hay menos de 5/4 cosos?
-            LabelVidaCerdito.Text = IslaCerdito.Instancia().mostrarCerditos()[0].mostrarResistencia().ToString();
+            for (int i = 0; i < Math.Min(IslaPajaro.Instancia().mostrarPajaros().Count(), 5); i++)
+            {
+                if (i == 0)
+                    PictureBoxPajaroActual.BackgroundImage = IslaPajaro.Instancia().mostrarPajaros()[0].Imagen();
+                else if (i == 1)
+                    PictureBoxPajaro1.BackgroundImage = IslaPajaro.Instancia().mostrarPajaros()[1].Imagen();
+                else if (i == 2)
+                    PictureBoxPajaro2.BackgroundImage = IslaPajaro.Instancia().mostrarPajaros()[2].Imagen();
+                else if (i == 3)
+                    PictureBoxPajaro3.BackgroundImage = IslaPajaro.Instancia().mostrarPajaros()[3].Imagen();
+                else if (i == 4)
+                    PictureBoxPajaro4.BackgroundImage = IslaPajaro.Instancia().mostrarPajaros()[4].Imagen();
+            }
+            for (int i = 0; i < Math.Min(IslaCerdito.Instancia().mostrarCerditos().Count(), 6); i++)
+            {
+                if (i == 0)
+                    PictureBoxCerditoActual.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[0].Imagen();
+                else if (i == 1)
+                    PictureBoxCerdito1.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[1].Imagen();
+                else if (i == 2)
+                    PictureBoxCerdito2.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[2].Imagen();
+                else if (i == 3)
+                    PictureBoxCerdito3.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[3].Imagen();
+                else if (i == 4)
+                    PictureBoxCerdito4.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[4].Imagen();
+                else if (i == 5)
+                    PictureBoxCerdito5.BackgroundImage = IslaCerdito.Instancia().mostrarCerditos()[5].Imagen();
+            }
+            if (Math.Min(IslaPajaro.Instancia().mostrarPajaros().Count(), 5) != 5)
+            {
+                for (int i = IslaPajaro.Instancia().mostrarPajaros().Count(); i < 5; i++)
+                {
+                    if (i == 0)
+                        PictureBoxPajaroActual.BackgroundImage = null;
+                    else if (i == 1)
+                        PictureBoxPajaro1.BackgroundImage = null;
+                    else if (i == 2)
+                        PictureBoxPajaro2.BackgroundImage = null;
+                    else if (i == 3)
+                        PictureBoxPajaro3.BackgroundImage = null;
+                    else if (i == 4)
+                        PictureBoxPajaro4.BackgroundImage = null;
+                }
+            }
+            if (Math.Min(IslaCerdito.Instancia().mostrarCerditos().Count(), 6) != 6)
+            {
+                for (int i = IslaCerdito.Instancia().mostrarCerditos().Count(); i < 6; i++)
+                {
+                    if (i == 0)
+                        PictureBoxCerditoActual.BackgroundImage = null;
+                    else if (i == 1)
+                        PictureBoxCerdito1.BackgroundImage = null;
+                    else if (i == 2)
+                        PictureBoxCerdito2.BackgroundImage = null;
+                    else if (i == 3)
+                        PictureBoxCerdito3.BackgroundImage = null;
+                    else if (i == 4)
+                        PictureBoxCerdito4.BackgroundImage = null;
+                    else if (i == 5)
+                        PictureBoxCerdito5.BackgroundImage = null;
+                }
+            }
+            if (IslaCerdito.Instancia().mostrarCerditos().Count() > 0)
+                LabelVidaCerdito.Text = IslaCerdito.Instancia().mostrarCerditos()[0].mostrarResistencia().ToString();
         }
         private void BotonPelear_Click(object sender, EventArgs e)
         {
@@ -306,6 +357,10 @@ namespace WindowsFormsApp2
                 }
             }
         }
-        
+
+        private void LabelVidaPajaro_Click(object sender, EventArgs e) //Se pide POR FAVOR que se pueda mostrar el daño del pajaro y no la vida sin la necesidad de hacer un click sobre el numero, ya que yo, Hernández Cerna Guillermo no sé cómo hacerlo.
+        {
+            LabelVidaPajaro.Text = IslaPajaro.Instancia().mostrarPajaros().First().fuerza().ToString();
+        }
     }
 }

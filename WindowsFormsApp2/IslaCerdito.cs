@@ -26,14 +26,16 @@ namespace WindowsFormsApp2
             instancia = this;
         }
 
-        public void serAtacado(List<PajaroComun> pajaros)
+        public bool serAtacado(PajaroComun pajaro) //Se modifico el tipo del método ya que se requiere que devuelva un valor para verificar en isla pajaro si hay algun obstaculo a atacar y evitar que el pajaro ataque sin haber algun obstaculo.
         {
-            foreach (PajaroComun pajaro in pajaros)
+            if (obstaculos.Count() > 0) //Se agregó un if porque en caso de cagarse a piñas los bichos y que no haya cerditos, se rompe todo.
             {
                 obstaculos.First().serDañado(pajaro.fuerza());
                 if (obstaculos.First().mostrarResistencia() <= 0)
                     obstaculos.Remove(obstaculos.First());
+                return true;
             }
+            return false;
         }
         public List<Obstaculo> mostrarCerditos()
         {
