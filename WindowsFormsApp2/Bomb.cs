@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp2
 {
-    class Bomb : PajaroComun
+    public class Bomb : PajaroComun
     {
-        private int fuerzaMax;
+        public int fuerzaMax;
         
         public Bomb(int ira, int fMax) : base(ira)
         {

@@ -7,9 +7,9 @@ using System.Web;
 
 namespace WindowsFormsApp2
 {
-    class Matilda : PajaroComun
+    public class Matilda : PajaroComun
     {
-        private int huevos;
+        public int huevos;
    
         public Matilda(int ira, int h) : base(ira)
         {

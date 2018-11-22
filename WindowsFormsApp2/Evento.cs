@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp2
 {
-    interface Evento
+    public interface Evento
     {
         void Suceder(IslaPajaro isla, int CantCerditos);
     }

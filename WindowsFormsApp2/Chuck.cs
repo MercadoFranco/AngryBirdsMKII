@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp2
 {
-    class Chuck : PajaroComun
+    public class Chuck : PajaroComun
     {
-        private int velocidad;
+        public int velocidad;
 
         public Chuck(int ira, int velocidad) : base(ira)
         {

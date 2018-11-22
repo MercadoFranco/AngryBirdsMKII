@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp2
 {
-    class Terence : Red
+    public class Terence : Red
     {
-        private int multiplicador;
+        public int multiplicador;
 
         public Terence(int ira, int multi) : base(ira)
         {

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp2
 {
-    class Red : PajaroComun
+    public class Red : PajaroComun
     {
-        protected int cantEnojado;
+        public int cantEnojado;
 
         public Red(int ira) : base(ira)
         {

@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace WindowsFormsApp2
 {
-    class IslaPajaro
+    public class IslaPajaro
     {
-        private List<Red> pajarosRed = new List<Red>();
-        private List<Bomb> pajarosBomb = new List<Bomb>();
-        private List<Matilda> pajarosMatilda = new List<Matilda>();
-        private List<Chuck> pajarosChuck = new List<Chuck>();
-        private List<Terence> pajarosTerence = new List<Terence>();
-        private List<PajaroComun> pajaros = new List<PajaroComun>();
+        public List<Red> pajarosRed = new List<Red>();
+        public List<Bomb> pajarosBomb = new List<Bomb>();
+        public List<Matilda> pajarosMatilda = new List<Matilda>();
+        public List<Chuck> pajarosChuck = new List<Chuck>();
+        public List<Terence> pajarosTerence = new List<Terence>();
+        public  List<PajaroComun> pajaros = new List<PajaroComun>();
         private static IslaPajaro instancia;
 
         public static IslaPajaro Instancia()

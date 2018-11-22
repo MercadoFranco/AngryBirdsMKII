@@ -4,14 +4,18 @@ using System.Linq;
 using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+
 
 namespace WindowsFormsApp2
 {
-    abstract class PajaroComun
+    public abstract class PajaroComun
     {
-        protected int ira;
-        protected bool homenaje;
-        protected IslaPajaro isla;
+        public int ira;
+        public bool homenaje;
+        [JsonIgnore]
+        public IslaPajaro isla;
+        [JsonIgnore]
         public Image imagen; //Esto quiero hacerlo privado, no me acuerdo por qué, pero acordate, Franco del futuro!
 
         public PajaroComun(int ira)
