@@ -157,5 +157,23 @@
   <ItemGroup>
     <None Include="Resources\Cerdites.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FONDO1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOTON-CREAR-APRETADO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FONDO2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOTON-CREAR-SIN-APRETAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\afb5f473b9c114e51f01128700a53d66.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\COMENZAR.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -40,3 +40,16 @@ C:\Users\Maikhol\Documents\GitHub\AngryBirdsMKII\WindowsFormsApp2\obj\Debug\Wind
 C:\Users\Maikhol\Documents\GitHub\AngryBirdsMKII\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Maikhol\Documents\GitHub\AngryBirdsMKII\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Maikhol\Documents\GitHub\AngryBirdsMKII\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CopyComplete
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CopyComplete
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+D:\Documents\AAAAAAAAAAAA\AngryBirdsMKII\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb

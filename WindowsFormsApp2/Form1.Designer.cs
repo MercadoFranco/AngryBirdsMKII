@@ -47,6 +47,8 @@
             this.AtacarACerdos = new System.Windows.Forms.Button();
             this.CreacionDeBichos = new System.Windows.Forms.Panel();
             this.CreacionCerditos = new System.Windows.Forms.Panel();
+            this.BotonCerditosCerditos = new System.Windows.Forms.Button();
+            this.IrPajarosDesdeCerditos = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.ListaCreacionCerdos = new System.Windows.Forms.ListBox();
             this.BotonCrearCerdo = new System.Windows.Forms.Button();
@@ -56,7 +58,7 @@
             this.PictureBoxCerditoCreacion = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.ListaCerditosCreacion = new System.Windows.Forms.ComboBox();
-            this.BotonPelear = new System.Windows.Forms.Button();
+            this.IrPelearDesdeCerditos = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.ListaPajarosCreados = new System.Windows.Forms.ListBox();
             this.CrearPajaro = new System.Windows.Forms.Button();
@@ -73,7 +75,13 @@
             this.PictureBoxPajaroCreacion = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ListaPajarosCreacion = new System.Windows.Forms.ComboBox();
-            this.IrCerdos = new System.Windows.Forms.Button();
+            this.IrCerdosDesdePajaros = new System.Windows.Forms.Button();
+            this.IrPelearDesdePajaros = new System.Windows.Forms.Button();
+            this.IrPajarosDesdePajaros = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.IrPajarosDesdeCombate = new System.Windows.Forms.Button();
+            this.IrCerdosDesdeCombate = new System.Windows.Forms.Button();
+            this.IrCombateCombate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPajaroActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCerditoActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPajaro1)).BeginInit();
@@ -91,16 +99,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCerditoCreacion)).BeginInit();
             this.PanelHuevoMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPajaroCreacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BotonEmpezar
             // 
-            this.BotonEmpezar.Location = new System.Drawing.Point(397, 239);
+            this.BotonEmpezar.BackColor = System.Drawing.Color.Transparent;
+            this.BotonEmpezar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BotonEmpezar.Location = new System.Drawing.Point(336, 252);
             this.BotonEmpezar.Name = "BotonEmpezar";
-            this.BotonEmpezar.Size = new System.Drawing.Size(116, 48);
+            this.BotonEmpezar.Size = new System.Drawing.Size(232, 48);
             this.BotonEmpezar.TabIndex = 1;
-            this.BotonEmpezar.Text = "Empezar";
-            this.BotonEmpezar.UseVisualStyleBackColor = true;
+            this.BotonEmpezar.UseVisualStyleBackColor = false;
             this.BotonEmpezar.Click += new System.EventHandler(this.BotonEmpezar_Click);
             // 
             // BotonSalir
@@ -115,14 +125,11 @@
             // 
             // PictureBoxPajaroActual
             // 
-            this.PictureBoxPajaroActual.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.PictureBoxPajaroActual.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxPajaroActual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PictureBoxPajaroActual.Location = new System.Drawing.Point(142, 114);
+            this.PictureBoxPajaroActual.Location = new System.Drawing.Point(144, 113);
             this.PictureBoxPajaroActual.Name = "PictureBoxPajaroActual";
-            this.PictureBoxPajaroActual.Size = new System.Drawing.Size(186, 184);
+            this.PictureBoxPajaroActual.Size = new System.Drawing.Size(184, 185);
             this.PictureBoxPajaroActual.TabIndex = 0;
             this.PictureBoxPajaroActual.TabStop = false;
             // 
@@ -236,7 +243,6 @@
             this.LabelVidaPajaro.Size = new System.Drawing.Size(24, 26);
             this.LabelVidaPajaro.TabIndex = 11;
             this.LabelVidaPajaro.Text = "0";
-            this.LabelVidaPajaro.Click += new System.EventHandler(this.LabelVidaPajaro_Click);
             // 
             // LabelVidaCerdito
             // 
@@ -253,6 +259,9 @@
             // 
             this.MenuCombate.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.FONDO;
             this.MenuCombate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MenuCombate.Controls.Add(this.IrCombateCombate);
+            this.MenuCombate.Controls.Add(this.IrCerdosDesdeCombate);
+            this.MenuCombate.Controls.Add(this.IrPajarosDesdeCombate);
             this.MenuCombate.Controls.Add(this.AtacarACerdos);
             this.MenuCombate.Controls.Add(this.LabelVidaCerdito);
             this.MenuCombate.Controls.Add(this.LabelVidaPajaro);
@@ -284,10 +293,10 @@
             this.AtacarACerdos.FlatAppearance.BorderSize = 0;
             this.AtacarACerdos.ForeColor = System.Drawing.Color.Transparent;
             this.AtacarACerdos.ImageKey = "(none)";
-            this.AtacarACerdos.Location = new System.Drawing.Point(369, 9);
+            this.AtacarACerdos.Location = new System.Drawing.Point(355, 9);
             this.AtacarACerdos.Margin = new System.Windows.Forms.Padding(0);
             this.AtacarACerdos.Name = "AtacarACerdos";
-            this.AtacarACerdos.Size = new System.Drawing.Size(142, 79);
+            this.AtacarACerdos.Size = new System.Drawing.Size(156, 79);
             this.AtacarACerdos.TabIndex = 13;
             this.AtacarACerdos.UseVisualStyleBackColor = false;
             this.AtacarACerdos.Click += new System.EventHandler(this.AtacarACerdos_Click);
@@ -295,7 +304,7 @@
             // CreacionDeBichos
             // 
             this.CreacionDeBichos.BackColor = System.Drawing.SystemColors.Control;
-            this.CreacionDeBichos.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.Background_pajaros;
+            this.CreacionDeBichos.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.FONDO2;
             this.CreacionDeBichos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CreacionDeBichos.Controls.Add(this.CreacionCerditos);
             this.CreacionDeBichos.Controls.Add(this.label8);
@@ -310,7 +319,9 @@
             this.CreacionDeBichos.Controls.Add(this.PictureBoxPajaroCreacion);
             this.CreacionDeBichos.Controls.Add(this.label1);
             this.CreacionDeBichos.Controls.Add(this.ListaPajarosCreacion);
-            this.CreacionDeBichos.Controls.Add(this.IrCerdos);
+            this.CreacionDeBichos.Controls.Add(this.IrCerdosDesdePajaros);
+            this.CreacionDeBichos.Controls.Add(this.IrPelearDesdePajaros);
+            this.CreacionDeBichos.Controls.Add(this.IrPajarosDesdePajaros);
             this.CreacionDeBichos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CreacionDeBichos.Location = new System.Drawing.Point(0, 0);
             this.CreacionDeBichos.Name = "CreacionDeBichos";
@@ -321,7 +332,7 @@
             // CreacionCerditos
             // 
             this.CreacionCerditos.BackColor = System.Drawing.SystemColors.Control;
-            this.CreacionCerditos.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.Cerdites;
+            this.CreacionCerditos.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.FONDO1;
             this.CreacionCerditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CreacionCerditos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CreacionCerditos.Controls.Add(this.MenuCombate);
@@ -334,7 +345,9 @@
             this.CreacionCerditos.Controls.Add(this.PictureBoxCerditoCreacion);
             this.CreacionCerditos.Controls.Add(this.label21);
             this.CreacionCerditos.Controls.Add(this.ListaCerditosCreacion);
-            this.CreacionCerditos.Controls.Add(this.BotonPelear);
+            this.CreacionCerditos.Controls.Add(this.IrPelearDesdeCerditos);
+            this.CreacionCerditos.Controls.Add(this.BotonCerditosCerditos);
+            this.CreacionCerditos.Controls.Add(this.IrPajarosDesdeCerditos);
             this.CreacionCerditos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CreacionCerditos.Location = new System.Drawing.Point(0, 0);
             this.CreacionCerditos.Name = "CreacionCerditos";
@@ -342,12 +355,32 @@
             this.CreacionCerditos.TabIndex = 23;
             this.CreacionCerditos.Visible = false;
             // 
+            // BotonCerditosCerditos
+            // 
+            this.BotonCerditosCerditos.Location = new System.Drawing.Point(174, 548);
+            this.BotonCerditosCerditos.Name = "BotonCerditosCerditos";
+            this.BotonCerditosCerditos.Size = new System.Drawing.Size(177, 27);
+            this.BotonCerditosCerditos.TabIndex = 24;
+            this.BotonCerditosCerditos.Text = "Cerditos";
+            this.BotonCerditosCerditos.UseVisualStyleBackColor = true;
+            // 
+            // IrPajarosDesdeCerditos
+            // 
+            this.IrPajarosDesdeCerditos.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.IrPajarosDesdeCerditos.Location = new System.Drawing.Point(-2, 548);
+            this.IrPajarosDesdeCerditos.Name = "IrPajarosDesdeCerditos";
+            this.IrPajarosDesdeCerditos.Size = new System.Drawing.Size(177, 27);
+            this.IrPajarosDesdeCerditos.TabIndex = 23;
+            this.IrPajarosDesdeCerditos.Text = "Pajaros";
+            this.IrPajarosDesdeCerditos.UseVisualStyleBackColor = false;
+            this.IrPajarosDesdeCerditos.Click += new System.EventHandler(this.IrPajarosDesdeCerditos_Click);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label12.ForeColor = System.Drawing.SystemColors.Info;
             this.label12.Location = new System.Drawing.Point(616, 72);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(323, 39);
@@ -357,6 +390,7 @@
             // 
             // ListaCreacionCerdos
             // 
+            this.ListaCreacionCerdos.BackColor = System.Drawing.Color.Maroon;
             this.ListaCreacionCerdos.FormattingEnabled = true;
             this.ListaCreacionCerdos.HorizontalScrollbar = true;
             this.ListaCreacionCerdos.Items.AddRange(new object[] {
@@ -369,12 +403,14 @@
             // 
             // BotonCrearCerdo
             // 
+            this.BotonCrearCerdo.BackColor = System.Drawing.Color.Transparent;
+            this.BotonCrearCerdo.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.BOTON_CREAR_APRETADO;
+            this.BotonCrearCerdo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BotonCrearCerdo.Location = new System.Drawing.Point(12, 480);
             this.BotonCrearCerdo.Name = "BotonCrearCerdo";
             this.BotonCrearCerdo.Size = new System.Drawing.Size(177, 71);
             this.BotonCrearCerdo.TabIndex = 16;
-            this.BotonCrearCerdo.Text = "Crear";
-            this.BotonCrearCerdo.UseVisualStyleBackColor = true;
+            this.BotonCrearCerdo.UseVisualStyleBackColor = false;
             this.BotonCrearCerdo.Click += new System.EventHandler(this.BotonCrearCerdo_Click);
             // 
             // CajaCerdos
@@ -391,7 +427,7 @@
             this.ResistenciaCambiante.AutoSize = true;
             this.ResistenciaCambiante.BackColor = System.Drawing.Color.Transparent;
             this.ResistenciaCambiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResistenciaCambiante.ForeColor = System.Drawing.Color.GreenYellow;
+            this.ResistenciaCambiante.ForeColor = System.Drawing.Color.Yellow;
             this.ResistenciaCambiante.Location = new System.Drawing.Point(186, 216);
             this.ResistenciaCambiante.Name = "ResistenciaCambiante";
             this.ResistenciaCambiante.Size = new System.Drawing.Size(96, 20);
@@ -403,6 +439,7 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label20.Location = new System.Drawing.Point(296, 9);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(336, 46);
@@ -426,6 +463,7 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
             this.label21.Location = new System.Drawing.Point(151, 75);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(349, 39);
@@ -450,22 +488,23 @@
             this.ListaCerditosCreacion.Text = "CERDO";
             this.ListaCerditosCreacion.SelectedIndexChanged += new System.EventHandler(this.ListaCerditosCreacion_SelectedIndexChanged);
             // 
-            // BotonPelear
+            // IrPelearDesdeCerditos
             // 
-            this.BotonPelear.Location = new System.Drawing.Point(639, 480);
-            this.BotonPelear.Name = "BotonPelear";
-            this.BotonPelear.Size = new System.Drawing.Size(177, 71);
-            this.BotonPelear.TabIndex = 22;
-            this.BotonPelear.Text = "DarsePutazos";
-            this.BotonPelear.UseVisualStyleBackColor = true;
-            this.BotonPelear.Click += new System.EventHandler(this.BotonPelear_Click);
+            this.IrPelearDesdeCerditos.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.IrPelearDesdeCerditos.Location = new System.Drawing.Point(348, 548);
+            this.IrPelearDesdeCerditos.Name = "IrPelearDesdeCerditos";
+            this.IrPelearDesdeCerditos.Size = new System.Drawing.Size(177, 27);
+            this.IrPelearDesdeCerditos.TabIndex = 22;
+            this.IrPelearDesdeCerditos.Text = "Combate";
+            this.IrPelearDesdeCerditos.UseVisualStyleBackColor = false;
+            this.IrPelearDesdeCerditos.Click += new System.EventHandler(this.IrPelearDesdeCerditos_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label8.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label8.Location = new System.Drawing.Point(616, 72);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(290, 39);
@@ -475,7 +514,9 @@
             // 
             // ListaPajarosCreados
             // 
+            this.ListaPajarosCreados.BackColor = System.Drawing.Color.Maroon;
             this.ListaPajarosCreados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListaPajarosCreados.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.ListaPajarosCreados.FormattingEnabled = true;
             this.ListaPajarosCreados.HorizontalScrollbar = true;
             this.ListaPajarosCreados.ItemHeight = 20;
@@ -488,16 +529,19 @@
             // 
             // CrearPajaro
             // 
+            this.CrearPajaro.BackColor = System.Drawing.Color.Transparent;
+            this.CrearPajaro.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.BOTON_CREAR_SIN_APRETAR;
+            this.CrearPajaro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CrearPajaro.Location = new System.Drawing.Point(12, 480);
             this.CrearPajaro.Name = "CrearPajaro";
             this.CrearPajaro.Size = new System.Drawing.Size(177, 71);
             this.CrearPajaro.TabIndex = 16;
-            this.CrearPajaro.Text = "Crear";
-            this.CrearPajaro.UseVisualStyleBackColor = true;
+            this.CrearPajaro.UseVisualStyleBackColor = false;
             this.CrearPajaro.Click += new System.EventHandler(this.CrearPajaro_Click);
             // 
             // PanelHuevoMaker
             // 
+            this.PanelHuevoMaker.BackColor = System.Drawing.Color.Maroon;
             this.PanelHuevoMaker.Controls.Add(this.label7);
             this.PanelHuevoMaker.Controls.Add(this.AgregarHuevo);
             this.PanelHuevoMaker.Controls.Add(this.PesoHuevos);
@@ -512,6 +556,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label7.Location = new System.Drawing.Point(3, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 17);
@@ -520,11 +565,12 @@
             // 
             // AgregarHuevo
             // 
-            this.AgregarHuevo.Location = new System.Drawing.Point(61, 125);
+            this.AgregarHuevo.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.BOTON_CREAR_SIN_APRETAR;
+            this.AgregarHuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.AgregarHuevo.Location = new System.Drawing.Point(41, 115);
             this.AgregarHuevo.Name = "AgregarHuevo";
-            this.AgregarHuevo.Size = new System.Drawing.Size(75, 23);
+            this.AgregarHuevo.Size = new System.Drawing.Size(113, 44);
             this.AgregarHuevo.TabIndex = 13;
-            this.AgregarHuevo.Text = "Crear";
             this.AgregarHuevo.UseVisualStyleBackColor = true;
             this.AgregarHuevo.Click += new System.EventHandler(this.AgregarHuevo_Click);
             // 
@@ -541,6 +587,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label5.Location = new System.Drawing.Point(12, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(176, 26);
@@ -562,7 +609,7 @@
             this.TextoCambiante.AutoSize = true;
             this.TextoCambiante.BackColor = System.Drawing.Color.Transparent;
             this.TextoCambiante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextoCambiante.ForeColor = System.Drawing.Color.Coral;
+            this.TextoCambiante.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.TextoCambiante.Location = new System.Drawing.Point(175, 171);
             this.TextoCambiante.Name = "TextoCambiante";
             this.TextoCambiante.Size = new System.Drawing.Size(79, 20);
@@ -585,7 +632,7 @@
             this.LabelIra.AutoSize = true;
             this.LabelIra.BackColor = System.Drawing.Color.Transparent;
             this.LabelIra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelIra.ForeColor = System.Drawing.Color.GreenYellow;
+            this.LabelIra.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.LabelIra.Location = new System.Drawing.Point(175, 130);
             this.LabelIra.Name = "LabelIra";
             this.LabelIra.Size = new System.Drawing.Size(32, 20);
@@ -597,6 +644,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label2.Location = new System.Drawing.Point(296, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(289, 46);
@@ -620,6 +668,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label1.Location = new System.Drawing.Point(151, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(225, 39);
@@ -643,26 +692,91 @@
             this.ListaPajarosCreacion.Text = "PAJARO";
             this.ListaPajarosCreacion.SelectedIndexChanged += new System.EventHandler(this.ListaPajarosCreacion_SelectedIndexChanged);
             // 
-            // IrCerdos
+            // IrCerdosDesdePajaros
             // 
-            this.IrCerdos.Location = new System.Drawing.Point(623, 483);
-            this.IrCerdos.Name = "IrCerdos";
-            this.IrCerdos.Size = new System.Drawing.Size(177, 71);
-            this.IrCerdos.TabIndex = 24;
-            this.IrCerdos.Text = "Ir Cerdos";
-            this.IrCerdos.UseVisualStyleBackColor = true;
-            this.IrCerdos.Click += new System.EventHandler(this.IrCerdos_Click);
+            this.IrCerdosDesdePajaros.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.IrCerdosDesdePajaros.Location = new System.Drawing.Point(176, 551);
+            this.IrCerdosDesdePajaros.Name = "IrCerdosDesdePajaros";
+            this.IrCerdosDesdePajaros.Size = new System.Drawing.Size(177, 27);
+            this.IrCerdosDesdePajaros.TabIndex = 24;
+            this.IrCerdosDesdePajaros.Text = "Cerdos";
+            this.IrCerdosDesdePajaros.UseVisualStyleBackColor = false;
+            this.IrCerdosDesdePajaros.Click += new System.EventHandler(this.IrCerdosDesdePajaros_Click);
+            // 
+            // IrPelearDesdePajaros
+            // 
+            this.IrPelearDesdePajaros.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.IrPelearDesdePajaros.Location = new System.Drawing.Point(350, 551);
+            this.IrPelearDesdePajaros.Name = "IrPelearDesdePajaros";
+            this.IrPelearDesdePajaros.Size = new System.Drawing.Size(177, 27);
+            this.IrPelearDesdePajaros.TabIndex = 26;
+            this.IrPelearDesdePajaros.Text = "Pelear";
+            this.IrPelearDesdePajaros.UseVisualStyleBackColor = false;
+            this.IrPelearDesdePajaros.Click += new System.EventHandler(this.IrPelearDesdePajaros_Click);
+            // 
+            // IrPajarosDesdePajaros
+            // 
+            this.IrPajarosDesdePajaros.Location = new System.Drawing.Point(0, 551);
+            this.IrPajarosDesdePajaros.Name = "IrPajarosDesdePajaros";
+            this.IrPajarosDesdePajaros.Size = new System.Drawing.Size(177, 27);
+            this.IrPajarosDesdePajaros.TabIndex = 25;
+            this.IrPajarosDesdePajaros.Text = "Pajaros";
+            this.IrPajarosDesdePajaros.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.COMENZAR;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(316, 212);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 112);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // IrPajarosDesdeCombate
+            // 
+            this.IrPajarosDesdeCombate.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.IrPajarosDesdeCombate.Location = new System.Drawing.Point(1, 549);
+            this.IrPajarosDesdeCombate.Name = "IrPajarosDesdeCombate";
+            this.IrPajarosDesdeCombate.Size = new System.Drawing.Size(177, 27);
+            this.IrPajarosDesdeCombate.TabIndex = 24;
+            this.IrPajarosDesdeCombate.Text = "Pajaros";
+            this.IrPajarosDesdeCombate.UseVisualStyleBackColor = false;
+            this.IrPajarosDesdeCombate.Click += new System.EventHandler(this.IrPajarosDesdeCombate_Click);
+            // 
+            // IrCerdosDesdeCombate
+            // 
+            this.IrCerdosDesdeCombate.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.IrCerdosDesdeCombate.Location = new System.Drawing.Point(177, 549);
+            this.IrCerdosDesdeCombate.Name = "IrCerdosDesdeCombate";
+            this.IrCerdosDesdeCombate.Size = new System.Drawing.Size(177, 27);
+            this.IrCerdosDesdeCombate.TabIndex = 25;
+            this.IrCerdosDesdeCombate.Text = "Cerdos";
+            this.IrCerdosDesdeCombate.UseVisualStyleBackColor = false;
+            this.IrCerdosDesdeCombate.Click += new System.EventHandler(this.IrCerdosDesdeCombate_Click);
+            // 
+            // IrCombateCombate
+            // 
+            this.IrCombateCombate.BackColor = System.Drawing.SystemColors.Control;
+            this.IrCombateCombate.Location = new System.Drawing.Point(348, 549);
+            this.IrCombateCombate.Name = "IrCombateCombate";
+            this.IrCombateCombate.Size = new System.Drawing.Size(177, 27);
+            this.IrCombateCombate.TabIndex = 26;
+            this.IrCombateCombate.Text = "Combate";
+            this.IrCombateCombate.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.Background_main_menu;
+            this.BackgroundImage = global::WindowsFormsApp2.Properties.Resources.afb5f473b9c114e51f01128700a53d66;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(928, 577);
             this.Controls.Add(this.CreacionDeBichos);
             this.Controls.Add(this.BotonSalir);
             this.Controls.Add(this.BotonEmpezar);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPajaroActual)).EndInit();
@@ -686,6 +800,7 @@
             this.PanelHuevoMaker.ResumeLayout(false);
             this.PanelHuevoMaker.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPajaroCreacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -733,10 +848,18 @@
         private System.Windows.Forms.PictureBox PictureBoxCerditoCreacion;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox ListaCerditosCreacion;
-        private System.Windows.Forms.Button IrCerdos;
+        private System.Windows.Forms.Button IrCerdosDesdePajaros;
         private System.Windows.Forms.Button AtacarACerdos;
-        private System.Windows.Forms.Button BotonPelear;
+        private System.Windows.Forms.Button IrPelearDesdeCerditos;
         private System.Windows.Forms.TextBox PesoHuevos;
+        private System.Windows.Forms.Button BotonCerditosCerditos;
+        private System.Windows.Forms.Button IrPajarosDesdeCerditos;
+        private System.Windows.Forms.Button IrPelearDesdePajaros;
+        private System.Windows.Forms.Button IrPajarosDesdePajaros;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button IrCombateCombate;
+        private System.Windows.Forms.Button IrCerdosDesdeCombate;
+        private System.Windows.Forms.Button IrPajarosDesdeCombate;
     }
 }
 

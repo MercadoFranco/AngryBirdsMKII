@@ -158,12 +158,7 @@ namespace WindowsFormsApp2
         {
 
         }
-
-        private void BotonIrCerdos_Click(object sender, EventArgs e)
-        {
-            CreacionCerditos.Visible = true;
-            CreacionDeBichos.Visible = false;
-        }
+        
 
         private void ListaCerditosCreacion_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -287,8 +282,12 @@ namespace WindowsFormsApp2
             }
             if (IslaCerdito.Instancia().mostrarCerditos().Count() > 0)
                 LabelVidaCerdito.Text = IslaCerdito.Instancia().mostrarCerditos()[0].mostrarResistencia().ToString();
+            if (IslaPajaro.Instancia().mostrarPajaros().Count() > 0) 
+            {
+                LabelVidaPajaro.Text = IslaPajaro.Instancia().mostrarPajaros()[0].fuerza().ToString();
+            }
         }
-        private void BotonPelear_Click(object sender, EventArgs e)
+        private void IrPelearDesdeCerditos_Click(object sender, EventArgs e)
         {
             MenuCombate.Visible = true;
             ActualizarImagenes();
@@ -299,9 +298,10 @@ namespace WindowsFormsApp2
 
         }
 
-        private void IrCerdos_Click(object sender, EventArgs e)
+        private void IrCerdosDesdePajaros_Click(object sender, EventArgs e)
         {
             CreacionCerditos.Visible = true;
+            MenuCombate.Visible = false;
         }
 
         public void BoxIra_TextChanged(object sender, EventArgs e)
@@ -359,10 +359,29 @@ namespace WindowsFormsApp2
                 }
             }
         }
-
-        private void LabelVidaPajaro_Click(object sender, EventArgs e) //Se pide POR FAVOR que se pueda mostrar el daño del pajaro y no la vida sin la necesidad de hacer un click sobre el numero, ya que yo, Hernández Cerna Guillermo no sé cómo hacerlo.
+        private void IrPajarosDesdeCerditos_Click(object sender, EventArgs e)
         {
-            
+            CreacionCerditos.Visible = false;
+            CreacionDeBichos.Visible = true;
+        }
+
+        private void IrPelearDesdePajaros_Click(object sender, EventArgs e)
+        {
+            CreacionCerditos.Visible = true;
+            MenuCombate.Visible = true;
+        }
+
+        private void IrCerdosDesdeCombate_Click(object sender, EventArgs e)
+        {
+            CreacionCerditos.Visible = true;
+            MenuCombate.Visible = false;
+        }
+
+        private void IrPajarosDesdeCombate_Click(object sender, EventArgs e)
+        {
+
+            CreacionCerditos.Visible = false;
+            MenuCombate.Visible = false;
         }
     }
 }

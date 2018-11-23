@@ -63,6 +63,16 @@ namespace WindowsFormsApp2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap afb5f473b9c114e51f01128700a53d66 {
+            get {
+                object obj = ResourceManager.GetObject("afb5f473b9c114e51f01128700a53d66", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Atacar1 {
             get {
                 object obj = ResourceManager.GetObject("Atacar1", resourceCulture);
@@ -106,6 +116,26 @@ namespace WindowsFormsApp2.Properties {
         internal static System.Drawing.Bitmap Bomb {
             get {
                 object obj = ResourceManager.GetObject("Bomb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BOTON_CREAR_APRETADO {
+            get {
+                object obj = ResourceManager.GetObject("BOTON-CREAR-APRETADO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BOTON_CREAR_SIN_APRETAR {
+            get {
+                object obj = ResourceManager.GetObject("BOTON-CREAR-SIN-APRETAR", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +193,39 @@ namespace WindowsFormsApp2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap COMENZAR {
+            get {
+                object obj = ResourceManager.GetObject("COMENZAR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FONDO {
             get {
                 object obj = ResourceManager.GetObject("FONDO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FONDO1 {
+            get {
+                object obj = ResourceManager.GetObject("FONDO1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FONDO2 {
+            get {
+                object obj = ResourceManager.GetObject("FONDO2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
